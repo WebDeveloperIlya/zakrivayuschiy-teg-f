@@ -12,3 +12,51 @@
 
 Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
 */
+
+.like-icon.is-liked .heart {
+  animation: scale-heart 0.3s ease-in 0.1s 1 alternate;
+}
+
+.like-icon.is-liked .flicker {
+  animation: flicker-heart 0.3s ease-in 0.3s 1 alternate;
+}
+
+/* Бесконечная анимация для стрелочки в меню выбора тем */
+@keyframes arrowAnimation {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(4px);
+  }
+}
+
+/* Анимации для сердечка в карточках */
+@keyframes arrow-animation {
+  from {
+    left: -20px;
+  }
+  to {
+    left: -16px;
+  }
+}
+
+/* Анимация для увелечения размера */
+@keyframes scale-heart {
+  from {
+    scale: 1;
+  }
+  to {
+    scale: 1.5;
+  }
+}
+
+/* Анимация для звездочек */
+@keyframes flicker-heart {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

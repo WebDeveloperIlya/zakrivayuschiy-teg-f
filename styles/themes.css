@@ -4,3 +4,59 @@
 ✦ theme-light — класс светлой темы
 ✦ не забудьте описать стили для изменения темы через медизапрос пользовательских предпочтений
 */
+
+:root.theme-light{
+  --main-font: 'Inter Variable';
+  --accent-font: 'Press Start 2P';
+  --font-weight: 400;
+  --color-background: #FFF;
+  --color-accent: #000;
+  --gradient-color: #d3d3d3;
+  --button-text: var(--color-background);
+  --color-heart: #ff0000;
+  --title-weight: "wght" 700;
+  --background-image:
+    repeating-linear-gradient(
+        to right,
+        var(--gradient-color, #d3d3d3) 0,
+        var(--gradient-color, #d3d3d3) 2px,
+        transparent 2px,
+        transparent 4px
+      ),
+      repeating-linear-gradient(
+        to bottom,
+        var(--gradient-color, #d3d3d3) 0,
+        var(--gradient-color, #d3d3d3) 2px,
+        transparent 2px,
+        transparent 4px
+      ),
+      linear-gradient(to bottom, #e7e7e7 0.01%, #1a1a1a);
+}
+
+:root.theme-dark{
+  --main-font: 'Inter Variable';
+  --accent-font: 'Press Start 2P';
+  --font-weight: 400;
+  --color-background: #000;
+  --color-accent: #00cc14;
+  --gradient-color: #000;
+  --button-text: var(--color-accent);
+  --color-heart: #ff0000;
+  --title-weight: "wght" 700;
+  --background-image:
+    repeating-linear-gradient(
+        to right,
+        var(--gradient-color, #d3d3d3) 0,
+        var(--gradient-color, #d3d3d3) 2px,
+        transparent 2px,
+        transparent 4px
+      ),
+      repeating-linear-gradient(
+        to bottom,
+        var(--gradient-color, #d3d3d3) 0,
+        var(--gradient-color, #d3d3d3) 2px,
+        transparent 2px,
+        transparent 4px
+      ),
+      linear-gradient(to bottom, #e7e7e7 0.01%, #1a1a1a);
+}

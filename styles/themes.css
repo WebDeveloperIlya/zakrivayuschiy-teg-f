@@ -6,15 +6,10 @@
 */
 
 :root.theme-light{
-  --main-font: 'Inter Variable';
-  --accent-font: 'Press Start 2P';
-  --font-weight: 400;
   --color-background: #FFF;
   --color-accent: #000;
   --gradient-color: #d3d3d3;
   --button-text: var(--color-background);
-  --color-heart: #ff0000;
-  --title-weight: "wght" 700;
   --background-image:
     repeating-linear-gradient(
         to right,
@@ -34,29 +29,24 @@
 }
 
 :root.theme-dark{
-  --main-font: 'Inter Variable';
-  --accent-font: 'Press Start 2P';
-  --font-weight: 400;
   --color-background: #000;
   --color-accent: #00cc14;
   --gradient-color: #000;
   --button-text: var(--color-accent);
-  --color-heart: #ff0000;
-  --title-weight: "wght" 700;
   --background-image:
     repeating-linear-gradient(
         to right,
-        var(--gradient-color, #d3d3d3) 0,
-        var(--gradient-color, #d3d3d3) 2px,
+        var(--gradient-color, #var(--color-accent)) 0,
+        var(--gradient-color, #var(--color-accent)) 2px,
         transparent 2px,
         transparent 4px
       ),
       repeating-linear-gradient(
         to bottom,
-        var(--gradient-color, #d3d3d3) 0,
-        var(--gradient-color, #d3d3d3) 2px,
+        var(--gradient-color, #var(--color-accent)) 0,
+        var(--gradient-color, #var(--color-accent)) 2px,
         transparent 2px,
         transparent 4px
       ),
-      linear-gradient(to bottom, #e7e7e7 0.01%, #1a1a1a);
+      linear-gradient(to bottom, #var(--color-accent) 0.01%, #1a1a1a);
 }

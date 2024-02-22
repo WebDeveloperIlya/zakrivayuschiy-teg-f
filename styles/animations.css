@@ -60,3 +60,89 @@
     opacity: 1;
   }
 }
+
+.theme-menu__button:hover {
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.theme-menu__button::after {
+  content: "";
+
+  display: block;
+  border-block-end: 2px solid var(--color-accent, #000);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+  transform-origin: 0 50%;
+}
+
+.theme-menu__button:focus-visible::after {
+  transform: scaleX(1);
+}
+
+.theme-menu__button:focus {
+  outline: none;
+  opacity: 0.6;
+}
+
+.card__icon-button:focus {
+  outline: none;
+}
+
+.card__icon-button:focus-visible {
+  outline: 2px solid var(--stroke-color);
+}
+
+.button:hover::before {
+  transform: translateX(0);
+}
+
+.button:focus {
+  outline: none;
+}
+
+.button:focus-visible {
+  box-shadow: 2px 2px 0px 0px var(--color-accent);
+}
+
+.like-icon:hover .heart-body {
+  fill: var(--color-heart);
+}
+
+.like-icon:active .heart-body {
+  fill: var(--color-heart);
+}
+
+.like-icon.is-liked .heart-body {
+  fill: var(--color-heart);
+}
+
+.like-icon .heart-center {
+  fill: var(--color-background);
+  transition: fill 0.3s 0.05s;
+}
+
+.like-icon:hover .heart-center {
+  fill: var(--color-heart);
+}
+
+.like-icon:active .heart-center {
+  fill: var(--color-heart);
+}
+
+.like-icon.is-liked .heart-center {
+  fill: var(--color-heart);
+}
+
+.like-icon .outline {
+  fill: var(--color-accent);
+}
+
+.like-icon.is-liked .outline {
+  fill: var(--color-heart);
+}
+
+.like-icon .flicker {
+  opacity: 0;
+  fill: var(--color-heart);
+}

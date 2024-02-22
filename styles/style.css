@@ -13,6 +13,9 @@
 Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
 
 */
+body{
+  padding: 100px 370px;
+}
 
 .page {
   display: flex;
@@ -28,6 +31,7 @@
   font-variation-settings: "wght" var(--font-weight, 400);
   color: var(--accent-font, #000);
 
+  background-attachment: fixed;
   background-color: var(--color-background, #FFF);
   background-size: cover;
   background-image: var(
@@ -50,20 +54,24 @@
   );
 }
 
+a{
+  text-decoration: none;
+}
+
 .header{
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+  padding: 138px 0 17px;
   border: 2px solid var(--color-accent);
   
-  gap: 25px;
-  width: 100%;
+  width: clamp(23.438rem, 30.516vw + 16.285rem, 43.75rem);
 
   font-family: var(--accent-font, sans-serif);
   background: var(--color-background, #FFF);
   color: var(--color-accent, #000);
 
-  margin-block-start: 100px;
   margin-block-end: 100px;
 
   text-transform: uppercase;
@@ -72,19 +80,16 @@
 .header__logo-group{
   display: flex;
   flex-direction: column;
-
-  gap: 20px;
-  padding-block-start: 120px;
   justify-content: center;
 }
 
 .header__logo-group-title{
+  margin-bottom: 20px;
   display: flex;
   justify-content: center;
 
-  font-size: 49px;
+  font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
   font-weight: var(--font-weight, 400);
-  line-height: 49px;
   letter-spacing: 0em;
   text-align: left;
 
@@ -93,10 +98,11 @@
 .header__logo-group-subtitle{
   display: flex;
   justify-content: center;
+  margin-bottom: 22px;
 
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 14px;
+  font-size: clamp(14px, 2.5vw, 23px);
+  font-weight: 700;
+  line-height: normal;
   letter-spacing: 0em;
   text-align: left;
 
@@ -106,14 +112,11 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-bottom: 18px;
 }
 
 .theme-menu__list {
   display: flex;
   flex-direction: column;
-  padding-left: 40%;
-  gap: 10px;
 }
 
 .theme-menu__button {
@@ -122,12 +125,14 @@
   font-family: var(--accent-font, sans-serif);
   text-transform: uppercase;
   font-size: 14px;
+  margin-left: 19px;
 
   background: transparent;
   border: none;
 
   cursor: pointer;
   pointer-events: all;
+  margin-bottom: 7px;
 }
 
 .theme-menu__button[disabled] {
@@ -148,14 +153,17 @@
 .main{
   display: flex;
   flex-direction: column;
-  row-gap: 50px;
-  align-items: center;
+  gap: 51.5px;
+  width: min(697px, 100%);
+  margin: auto auto;
 }
 
 .card{
   display: flex;
   flex-direction: column;
+  width: clamp(23.438rem, 30.516vw + 16.285rem, 43.75rem);
   border: 2px solid var(--color-accent);
+  line-height: 21px;
   font-family: var(--main-font, sans-serif);
   background-color: var(--color-background);
 }
@@ -163,9 +171,8 @@
 .card__title{
   padding: 4px 10px 6px 10px;
   color: var(--color-accent);
-  font-variation-settings: "wght" 700;
+  font-variation-settings: "wght"var(--main-weight, 785);
   line-height: 21.78px;
-  width: 95%;
   font-size: 18px;
   letter-spacing: 0em;
   text-align: left;
@@ -173,7 +180,6 @@
 
 .card__img-box{
   position: relative;
-  aspect-ratio: 1/1;
 }
 
 .card__img-watermark{
@@ -182,7 +188,7 @@
   z-index: 1;
   position: absolute;
   top: 25px;
-  right: 13px;
+  right: 10px;
 
   text-shadow: 
               1px 0 1px var(--color-background),
@@ -199,10 +205,10 @@
 }
 
 .card__img{
-  width: 375px;
-  height: 375px;
-  object-fit: fill;
-  object-position: 100%;
+  display: block;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 .card__text{
@@ -211,7 +217,7 @@
   gap: 25px;
 
   color: var(--color-accent, #FFF);
-  margin: 25px 27px 0;
+  margin: 29px 28px 0 25px;
 
   font-family: var(--main-font, 'Inter Variable');
   font-size: 18px;
@@ -330,26 +336,18 @@
 
 /* Модальное окно */
 .save-button {
-  padding: 15px 20px;
+  gap: 10px;
+  padding-left: 19px;
+  min-width: 340px;
+  min-height: 51px;
+  margin: 0 auto 102px;
   flex-direction: column;
   display: flex;
   gap: 8px;
   align-items: center;
+  color: var(--color-accent);
   background: var(--color-background);
   margin-bottom: 100px;
-}
-
-.button__text-ok{
-  mix-blend-mode: normal;
-  color: var(--color-accent);
-  font-family: var(--accent-font);
-
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 13px;
-  letter-spacing: 0em;
-  text-align: left;
-
 }
 
 .dialog {
@@ -374,7 +372,7 @@
 .dialog__box {
   display: flex;
   flex-direction: column;
-  gap: 28px;
+  gap: 27px;
 }
 
 .dialog__text {
@@ -389,15 +387,16 @@
   align-items: center;
 }
 
-.floppy-image{
-  width: 29px;
-  height: 28px;
+.floppy {
+  width: 21px;
+  height: 21px;
+  mix-blend-mode: difference;
+  color: var(--button-text);
 }
 
-.dialog .floppy-image {
+.dialog .floppy {
   width: 39px;
   height: 39px;
-  mix-blend-mode: normal;
 }
 
 .button-ok{
@@ -406,69 +405,21 @@
 }
 
 @media (width >= 1440px) {
-  body{
-    padding: 100px 370px;
-  }
-
-  .header{
-    margin-block-start: 0;
-  }
-
-  .card__text{
-    margin: 25px 25px 0;
-  }
-
-  .header__logo-group{
-    padding-block-start: 136px;
-  }
-
-  .header__logo-group-title{
-    font-size: 65px;
-    line-height: 65px;
-  }
-
-  .header__logo-group-subtitle{
-    font-size: 23px;
-    line-height: 23px;
-  }
-
-  .theme-menu__list{
-    padding-left: 44.4%;
-  }
-
   .card__title{
-    padding: 3px 24px 8px 10px;
+    padding: 5px 10px;
   }
 
-  .card__img-box{
-    aspect-ratio: 1 / 1;
-  }
-}
-
-.card__img{
-  width: 100%;
-  height: 100%;
-}
-
-@media (width > 375px) {
   .save-button {
     flex-direction: row;
   }
-}
-
-@media (width > 375px) {
-  .dialog__box {
-    gap: 26px;
+  .card__img-watermark{
+    right: 25px;
   }
-}
 
-@media (width > 375px) {
   .dialog__text {
     width: 100%;
   }
-}
-
-@media (width > 375px) {
+  
   .dialog {
     padding: 30px 26px;
   }

@@ -106,7 +106,7 @@
 }
 
 .like-icon:hover .heart-body {
-  fill: var(--color-heart);
+  fill: var(--color-accent);
 }
 
 .like-icon:active .heart-body {
@@ -123,7 +123,7 @@
 }
 
 .like-icon:hover .heart-center {
-  fill: var(--color-heart);
+  fill: var(--color-accent);
 }
 
 .like-icon:active .heart-center {

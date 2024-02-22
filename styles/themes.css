@@ -10,6 +10,7 @@
   --color-accent: #000;
   --gradient-color: #d3d3d3;
   --button-text: var(--color-background);
+  --main-weight: 700;
   --background-image:
     repeating-linear-gradient(
         to right,
@@ -33,20 +34,48 @@
   --color-accent: #00cc14;
   --gradient-color: #000;
   --button-text: var(--color-accent);
+  --main-weight: 785;
   --background-image:
     repeating-linear-gradient(
         to right,
-        var(--gradient-color, #var(--color-accent)) 0,
-        var(--gradient-color, #var(--color-accent)) 2px,
+        var(--gradient-color, var(--color-accent)) 0,
+        var(--gradient-color, var(--color-accent)) 2px,
         transparent 2px,
         transparent 4px
       ),
       repeating-linear-gradient(
         to bottom,
-        var(--gradient-color, #var(--color-accent)) 0,
-        var(--gradient-color, #var(--color-accent)) 2px,
+        var(--gradient-color, var(--color-accent)) 0,
+        var(--gradient-color, var(--color-accent)) 2px,
         transparent 2px,
         transparent 4px
       ),
-      linear-gradient(to bottom, #var(--color-accent) 0.01%, #1a1a1a);
+    linear-gradient(to bottom, var(--color-accent) 0.01%, #1a1a1a);
+}
+
+
+@media (prefers-color-scheme: dark){
+  :root{
+    --color-background: #000;
+    --color-accent: #00cc14;
+    --gradient-color: #000;
+    --button-text: var(--color-accent);
+    --main-weight: 785;
+    --background-image:
+    repeating-linear-gradient(
+        to right,
+        var(--gradient-color, var(--color-accent)) 0,
+        var(--gradient-color, var(--color-accent)) 2px,
+        transparent 2px,
+        transparent 4px
+      ),
+      repeating-linear-gradient(
+        to bottom,
+        var(--gradient-color, var(--color-accent)) 0,
+        var(--gradient-color, var(--color-accent)) 2px,
+        transparent 2px,
+        transparent 4px
+      ),
+    linear-gradient(to bottom, var(--color-accent) 0.01%, #1a1a1a);
+  }
 }

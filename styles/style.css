@@ -13,45 +13,34 @@
 Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
 
 */
+
 body{
-  padding: 100px 370px;
+  margin: 100px auto 100px auto;
 }
 
 .page {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  max-width: clamp(23.438rem, 30.516vw + 16.285rem, 43.75rem);
+  height: 100%;
+  color: var(--accent-font, #000);
+
+  font-family: var(--main-font, sans-serif);
+  background-color: var(--color-background, #FFF);
+  background-image: var(
+    --background-image,
+    repeating-linear-gradient(90deg, var(--gradient-color) 0 2px, transparent 2px 4px), 
+    repeating-linear-gradient(180deg, var(--gradient-color) 0 2px, transparent 2px 4px), 
+    linear-gradient(180deg, #007f0c 0%, #004306 100%)
+  );
+  background-size: cover;
+  background-attachment: fixed;
 
   min-inline-size: 320px;
   min-block-size: 100dvb;
-  height: 100%;
-
-  font-family: var(--main-font, sans-serif);
   font-variation-settings: "wght" var(--font-weight, 400);
-  color: var(--accent-font, #000);
-
-  background-attachment: fixed;
-  background-color: var(--color-background, #FFF);
-  background-size: cover;
-  background-image: var(
-    --background-image,
-    repeating-linear-gradient(
-      to right,
-      var(--gradient-color, #d3d3d3) 0,
-      var(--gradient-color, #d3d3d3) 2px,
-      transparent 2px,
-      transparent 4px
-    ),
-    repeating-linear-gradient(
-      to bottom,
-      var(--gradient-color, #d3d3d3) 0,
-      var(--gradient-color, #d3d3d3) 2px,
-      transparent 2px,
-      transparent 4px
-    ),
-    linear-gradient(to bottom, #e7e7e7 0.01%, #1a1a1a)
-  );
 }
 
 a{
@@ -63,18 +52,18 @@ a{
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 138px 0 17px;
-  border: 2px solid var(--color-accent);
   
-  width: clamp(23.438rem, 30.516vw + 16.285rem, 43.75rem);
-
-  font-family: var(--accent-font, sans-serif);
-  background: var(--color-background, #FFF);
-  color: var(--color-accent, #000);
+  width: 100%;
 
   margin-block-end: 100px;
+  border: 2px solid var(--color-accent);
+  padding: 120px 0 17px;
+  color: var(--color-accent, #000);
+
+  font-family: var(--accent-font, sans-serif);
 
   text-transform: uppercase;
+  background: var(--color-background, #FFF);
 }
 
 .header__logo-group{
@@ -84,12 +73,12 @@ a{
 }
 
 .header__logo-group-title{
-  margin-bottom: 20px;
   display: flex;
   justify-content: center;
+  margin-bottom: 20px;
+  font-weight: var(--font-weight, 400);
 
   font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
-  font-weight: var(--font-weight, 400);
   letter-spacing: 0em;
   text-align: left;
 
@@ -99,9 +88,9 @@ a{
   display: flex;
   justify-content: center;
   margin-bottom: 22px;
+  font-weight: 700;
 
   font-size: clamp(14px, 2.5vw, 23px);
-  font-weight: 700;
   line-height: normal;
   letter-spacing: 0em;
   text-align: left;
@@ -120,19 +109,19 @@ a{
 }
 
 .theme-menu__button {
-  display: inline-block;
   position: relative;
-  font-family: var(--accent-font, sans-serif);
-  text-transform: uppercase;
-  font-size: 14px;
+  display: inline-block;
+  margin-bottom: 7px;
   margin-left: 19px;
+  border: none;
+  font-family: var(--accent-font, sans-serif);
+  font-size: 14px;
+  text-transform: uppercase;
 
   background: transparent;
-  border: none;
 
   cursor: pointer;
   pointer-events: all;
-  margin-bottom: 7px;
 }
 
 .theme-menu__button[disabled] {
@@ -145,37 +134,34 @@ a{
   position: absolute;
   left: -15px;
   display: inline-block;
+  animation: arrowAnimation 0.5s ease-in-out infinite alternate;
   inline-size: 16px;
   block-size: 13px;
-  animation: arrowAnimation 0.5s ease-in-out infinite alternate;
 }
 
 .main{
   display: flex;
   flex-direction: column;
   gap: 51.5px;
-  width: min(697px, 100%);
-  margin: auto auto;
 }
 
 .card{
   display: flex;
   flex-direction: column;
-  width: clamp(23.438rem, 30.516vw + 16.285rem, 43.75rem);
   border: 2px solid var(--color-accent);
-  line-height: 21px;
   font-family: var(--main-font, sans-serif);
+  line-height: 21px;
   background-color: var(--color-background);
 }
 
 .card__title{
   padding: 4px 10px 6px 10px;
   color: var(--color-accent);
-  font-variation-settings: "wght"var(--main-weight, 785);
-  line-height: 21.78px;
   font-size: 18px;
+  line-height: 21.78px;
   letter-spacing: 0em;
   text-align: left;
+  font-variation-settings: "wght"var(--main-weight, 785);
 }
 
 .card__img-box{
@@ -183,25 +169,27 @@ a{
 }
 
 .card__img-watermark{
-  border: 1px;
-
-  z-index: 1;
   position: absolute;
   top: 25px;
   right: 10px;
 
-  text-shadow: 
-              1px 0 1px var(--color-background),
-              -1px 0 1px var(--color-background);
+  z-index: 1;
+  border: 1px;
+  opacity: 0.5;
 
   color: var(--color-accent, #000);
-  font-family: var(--accent-font, 'Press Starts 2P'); 
+  font-family: var(--accent-font, 'Press Starts 2P');
+  font-weight: 400; 
   font-size: 14px;
-  font-weight: 400;
   line-height: 14px;
   letter-spacing: 0em;
-  opacity: 0.5;
   text-align: left;
+
+  text-shadow:
+    -1px 0 var(--color-background),
+    0 1px var(--color-background),
+    1px 0 var(--color-background),
+    0 -1px var(--color-background);
 }
 
 .card__img{
@@ -215,13 +203,13 @@ a{
   display: flex;
   flex-direction: column;
   gap: 25px;
-
-  color: var(--color-accent, #FFF);
   margin: 29px 28px 0 25px;
 
+  color: var(--color-accent, #FFF);
+
   font-family: var(--main-font, 'Inter Variable');
-  font-size: 18px;
   font-weight: var(--font-weight, 400);
+  font-size: 18px;
   line-height: 21px;
   
   letter-spacing: 0em;
@@ -231,11 +219,11 @@ a{
 
 
 .like-icon {
+  position: relative;
+  z-index: 1;
   width: inherit;
   height: inherit;
   fill: var(--color-accent);
-  position: relative;
-  z-index: 1;
 }
 
 .like-icon .heart {
@@ -250,40 +238,41 @@ a{
 }
 
 .card__icon-button {
-  padding: 0;
   width: 39px;
   height: 36px;
-  background: transparent;
   border: none;
+  padding: 0;
+  background: transparent;
   cursor: pointer;
 }
 
 .like-button__container{
   display: flex;
-  align-items: center;
   justify-content: end;
+  align-items: center;
   gap: 6px;
   padding: 25px 25px 25px 0;
 }
 
 .button__text{
-  font-family: var(--accent-font);
   color: var(--button-text);
+  font-family: var(--accent-font);
   mix-blend-mode: difference;
 }
 
 .button {
-  font-family: var(--accent-font);
-  width: 130px;
-  height: 38px;
-  font-size: 14px;
   position: relative;
+  min-height: 38px;
+  border: 2px solid var(--color-accent);
+  padding: 10px 0;
+  min-width: 130px;
   overflow: hidden;
   color: var(--color-background);
-  background: none;
-  border: 2px solid var(--color-accent);
-  cursor: pointer;
+  font-family: var(--accent-font);
+  font-size: 14px;
+  background: var(--color-background);
   transition: 0.5s ease-in-out;
+  cursor: pointer;
 }
 
 .text-button{
@@ -300,8 +289,8 @@ a{
   height: 100%;
   overflow: hidden;
   background: var(--color-accent);
-  transform: translateX(-100%);
   transition: transform 0.5s ease-in-out;
+  transform: translateX(-100%);
 }
 
 /* Эффекты для картинок в карточках */
@@ -336,27 +325,21 @@ a{
 
 /* Модальное окно */
 .save-button {
-  gap: 10px;
-  padding-left: 19px;
-  min-width: 340px;
-  min-height: 51px;
-  margin: 0 auto 102px;
-  flex-direction: column;
   display: flex;
-  gap: 8px;
+  flex-direction: column;
   align-items: center;
-  color: var(--color-accent);
-  background: var(--color-background);
-  margin-bottom: 100px;
+  gap: 8px;
+  padding: 15px 19px;
+  margin: 0 auto;
 }
 
 .dialog {
-  font-family: var(--accent-font);
-  font-size: 14px;
+  border: 2px solid var(--color-accent);
   padding: 32px 38px;
   color: var(--color-accent);
+  font-family: var(--accent-font);
+  font-size: 14px;
   background: var(--color-background);
-  border: 2px solid var(--color-accent);
 }
 
 .dialog::backdrop {
@@ -372,26 +355,26 @@ a{
 .dialog__box {
   display: flex;
   flex-direction: column;
-  gap: 27px;
+  gap: 30px;
 }
 
 .dialog__text {
-  text-transform: uppercase;
-  line-height: 1.5;
   max-width: 234px;
+  line-height: 1.5;
+  text-transform: uppercase;
 }
 
 .dialog__text-box {
   display: flex;
-  gap: 22px;
   align-items: center;
+  gap: 20px;
 }
 
 .floppy {
-  width: 21px;
-  height: 21px;
-  mix-blend-mode: difference;
+  width: 28px;
+  height: 28px;
   color: var(--button-text);
+  mix-blend-mode: difference;
 }
 
 .dialog .floppy {
@@ -404,24 +387,36 @@ a{
   text-transform: uppercase;
 }
 
-@media (width >= 1440px) {
+@media (width > 375px) {
+  .header{
+    padding: 138px 0 17px;
+  }
   .card__title{
     padding: 5px 10px;
   }
-
   .save-button {
     flex-direction: row;
   }
   .card__img-watermark{
     right: 25px;
   }
-
+  .floppy {
+    width: 21px;
+    height: 21px;
+  }
   .dialog__text {
     width: 100%;
   }
   
   .dialog {
-    padding: 30px 26px;
+    padding: 30px 30px;
   }
 }
 
+@supports((text-stroke: 1px var(--color-background)) or (-webkit-text-stroke: 1px var(--color-background))) {
+  .card__img-watermark {
+    text-shadow: none;
+    -webkit-text-stroke: 1px var(--color-background);
+    text-stroke: 1px var(--color-background);
+  }
+}

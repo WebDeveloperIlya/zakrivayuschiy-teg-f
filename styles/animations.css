@@ -80,6 +80,15 @@
   transform: scaleX(1);
 }
 
+.card__icon-button:focus {
+  outline: none;
+}
+
+.card__icon-button:focus-visible {
+  border: 2px solid var(--color-accent);
+  transition: border 0.3s ease-in-out;
+}
+
 .theme-menu__button:focus {
   outline: none;
   opacity: 0.6;
@@ -87,10 +96,6 @@
 
 .card__icon-button:focus {
   outline: none;
-}
-
-.card__icon-button:focus-visible {
-  outline: 2px solid var(--stroke-color);
 }
 
 .button:hover::before {
